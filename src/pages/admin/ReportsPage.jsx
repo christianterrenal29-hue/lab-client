@@ -4,6 +4,7 @@ import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import Input from '../../components/ui/Input';
+<<<<<<< HEAD
 import Select from '../../components/ui/Select';
 import Spinner from '../../components/ui/Spinner';
 
@@ -11,6 +12,10 @@ const CATEGORIES = ['Computer', 'Monitor', 'Keyboard', 'Mouse', 'Printer', 'Netw
 const STATUSES = ['Available', 'Borrowed', 'Under Maintenance', 'Damaged', 'Missing'];
 const BORROW_STATUSES = ['Pending', 'Borrowed', 'Returned', 'Rejected', 'Overdue'];
 
+=======
+import Spinner from '../../components/ui/Spinner';
+
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 function SummaryGrid({ title, data }) {
   const entries = Object.entries(data || {});
 
@@ -27,7 +32,11 @@ function SummaryGrid({ title, data }) {
             {entries.map(([label, value]) => (
               <div
                 key={label}
+<<<<<<< HEAD
                 className="flex items-center justify-between rounded-lg border border-gray-300 px-3 py-2 shadow-sm dark:border-gray-700"
+=======
+                className="flex items-center justify-between rounded-lg border border-gray-200 px-3 py-2 dark:border-gray-800"
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
               >
                 <Badge variant={label}>{label}</Badge>
                 <span className="font-semibold text-gray-900 dark:text-white">{value}</span>
@@ -48,15 +57,22 @@ function escapeCsv(value) {
 export default function ReportsPage() {
   const [reports, setReports] = useState(null);
   const [loading, setLoading] = useState(true);
+<<<<<<< HEAD
   const [filters, setFilters] = useState({ startDate: '', endDate: '', category: '', status: '', borrower: '' });
+=======
+  const [filters, setFilters] = useState({ startDate: '', endDate: '' });
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 
   const queryString = useMemo(() => {
     const params = new URLSearchParams();
     if (filters.startDate) params.set('startDate', filters.startDate);
     if (filters.endDate) params.set('endDate', filters.endDate);
+<<<<<<< HEAD
     if (filters.category) params.set('category', filters.category);
     if (filters.status) params.set('status', filters.status);
     if (filters.borrower) params.set('borrower', filters.borrower);
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     return params.toString();
   }, [filters]);
 
@@ -90,9 +106,12 @@ export default function ReportsPage() {
       ['Borrowing', 'Total', reports?.borrow?.total || 0],
       ['Maintenance', 'Total', reports?.maintenance?.total || 0],
       ['Maintenance', 'Total Cost', reports?.maintenance?.totalCost || 0],
+<<<<<<< HEAD
       ['Low Stock Report', 'Low Stock Items', reports?.inventory?.lowStock || 0],
       ['Overdue Borrow Report', 'Overdue Returns', reports?.borrow?.overdue || 0],
       ['Maintenance Report', 'Due Soon or Overdue', reports?.maintenance?.maintenanceDue || 0],
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     ];
 
     const appendGroup = (section, groupName, data) => {
@@ -104,7 +123,10 @@ export default function ReportsPage() {
     appendGroup('Inventory', 'Status', reports?.inventory?.byStatus);
     appendGroup('Inventory', 'Category', reports?.inventory?.byCategory);
     appendGroup('Inventory', 'Condition', reports?.inventory?.byCondition);
+<<<<<<< HEAD
     appendGroup('Inventory', 'Room', reports?.inventory?.byRoom);
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     appendGroup('Borrowing', 'Status', reports?.borrow?.byStatus);
     appendGroup('Maintenance', 'Status', reports?.maintenance?.byStatus);
     appendGroup('Maintenance', 'Type', reports?.maintenance?.byType);
@@ -154,6 +176,7 @@ export default function ReportsPage() {
             value={filters.endDate}
             onChange={(event) => setFilters((prev) => ({ ...prev, endDate: event.target.value }))}
           />
+<<<<<<< HEAD
           <Select
             label="Category"
             value={filters.category}
@@ -176,6 +199,8 @@ export default function ReportsPage() {
             onChange={(event) => setFilters((prev) => ({ ...prev, borrower: event.target.value }))}
             placeholder="Borrower user id"
           />
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           <Button variant="secondary" onClick={() => window.print()}>
             Print
           </Button>
@@ -208,15 +233,22 @@ export default function ReportsPage() {
         </Card>
         <Card>
           <Card.Body>
+<<<<<<< HEAD
             <p className="text-sm text-gray-500 dark:text-gray-400">Low Stock Items</p>
             <p className="mt-2 text-3xl font-bold text-gray-900 dark:text-white">
               {reports?.inventory?.lowStock || 0}
+=======
+            <p className="text-sm text-gray-500 dark:text-gray-400">Maintenance Records</p>
+            <p className="mt-2 text-3xl font-bold text-gray-900 dark:text-white">
+              {reports?.maintenance?.total || 0}
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
             </p>
           </Card.Body>
         </Card>
       </div>
 
       <div className="grid gap-6 xl:grid-cols-2">
+<<<<<<< HEAD
         <SummaryGrid title="Inventory Report" data={{ Total: reports?.inventory?.total || 0, LowStock: reports?.inventory?.lowStock || 0 }} />
         <SummaryGrid title="Borrowing Report" data={{ Total: reports?.borrow?.total || 0, Overdue: reports?.borrow?.overdue || 0 }} />
         <SummaryGrid title="Maintenance Report" data={{ Total: reports?.maintenance?.total || 0, Due: reports?.maintenance?.maintenanceDue || 0, Overdue: reports?.maintenance?.maintenanceOverdue || 0 }} />
@@ -226,6 +258,11 @@ export default function ReportsPage() {
         <SummaryGrid title="Inventory by Category" data={reports?.inventory?.byCategory} />
         <SummaryGrid title="Inventory by Condition" data={reports?.inventory?.byCondition} />
         <SummaryGrid title="Inventory by Room" data={reports?.inventory?.byRoom} />
+=======
+        <SummaryGrid title="Inventory by Status" data={reports?.inventory?.byStatus} />
+        <SummaryGrid title="Inventory by Category" data={reports?.inventory?.byCategory} />
+        <SummaryGrid title="Inventory by Condition" data={reports?.inventory?.byCondition} />
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         <SummaryGrid title="Borrow by Status" data={reports?.borrow?.byStatus} />
         <SummaryGrid title="Maintenance by Status" data={reports?.maintenance?.byStatus} />
         <SummaryGrid title="Maintenance by Type" data={reports?.maintenance?.byType} />

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 
 const app = fs.readFileSync(new URL('../src/App.jsx', import.meta.url), 'utf8');
+<<<<<<< HEAD
 const landingPage = fs.readFileSync(new URL('../src/pages/LandingPage.jsx', import.meta.url), 'utf8');
 const sidebar = fs.readFileSync(new URL('../src/components/layout/Sidebar.jsx', import.meta.url), 'utf8');
 const navbar = fs.readFileSync(new URL('../src/components/layout/Navbar.jsx', import.meta.url), 'utf8');
@@ -17,6 +18,15 @@ const laboratoriesPage = fs.readFileSync(new URL('../src/pages/admin/Laboratorie
 
 const requiredRoutes = [
   '/',
+=======
+const sidebar = fs.readFileSync(new URL('../src/components/layout/Sidebar.jsx', import.meta.url), 'utf8');
+const authContext = fs.readFileSync(new URL('../src/context/AuthContext.jsx', import.meta.url), 'utf8');
+const reportsPage = fs.readFileSync(new URL('../src/pages/admin/ReportsPage.jsx', import.meta.url), 'utf8');
+const borrowingPage = fs.readFileSync(new URL('../src/pages/shared/BorrowingPage.jsx', import.meta.url), 'utf8');
+const maintenancePage = fs.readFileSync(new URL('../src/pages/shared/MaintenancePage.jsx', import.meta.url), 'utf8');
+
+const requiredRoutes = [
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   '/login',
   '/register',
   '/forgot-password',
@@ -26,12 +36,16 @@ const requiredRoutes = [
   '/admin/inventory/new',
   '/admin/inventory/:id',
   '/admin/inventory/:id/edit',
+<<<<<<< HEAD
   '/admin/inventory/scan',
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   '/admin/users',
   '/admin/laboratories',
   '/admin/borrowing',
   '/admin/maintenance',
   '/admin/reports',
+<<<<<<< HEAD
   '/admin/activity-logs',
   '/staff/dashboard',
   '/staff/inventory',
@@ -41,6 +55,12 @@ const requiredRoutes = [
   '/staff/maintenance',
   '/staff/reports',
   '/inventory/:id',
+=======
+  '/staff/dashboard',
+  '/staff/inventory',
+  '/staff/borrowing',
+  '/staff/maintenance',
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   '/student/dashboard',
   '/student/borrow',
   '/student/history',
@@ -49,12 +69,16 @@ const requiredRoutes = [
 const sidebarLinks = [
   '/admin/dashboard',
   '/admin/inventory',
+<<<<<<< HEAD
   '/admin/inventory/scan',
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   '/admin/users',
   '/admin/laboratories',
   '/admin/borrowing',
   '/admin/maintenance',
   '/admin/reports',
+<<<<<<< HEAD
   '/admin/activity-logs',
   '/staff/dashboard',
   '/staff/inventory',
@@ -62,6 +86,12 @@ const sidebarLinks = [
   '/staff/borrowing',
   '/staff/maintenance',
   '/staff/reports',
+=======
+  '/staff/dashboard',
+  '/staff/inventory',
+  '/staff/borrowing',
+  '/staff/maintenance',
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   '/student/dashboard',
   '/student/borrow',
   '/student/history',
@@ -86,6 +116,7 @@ assert(app.includes('function RoleRoute'), 'RoleRoute is missing');
 assert(app.includes("roles={['admin']}"), 'Admin role guard is missing');
 assert(app.includes("roles={['staff']}"), 'Staff role guard is missing');
 assert(app.includes("roles={['student']}"), 'Student role guard is missing');
+<<<<<<< HEAD
 assert(app.includes('LandingPage'), 'Landing page route is missing');
 assert(landingPage.includes('Laboratory Inventory and Tracking System'), 'Landing page system title is missing');
 assert(landingPage.includes('Top Link Global College'), 'Landing page school name is missing');
@@ -106,11 +137,15 @@ assert(!sidebar.includes('logout'), 'Sidebar logout button should not be present
 assert(!sidebar.includes('LogOut'), 'Sidebar logout icon should not be present');
 assert(navbar.includes('logout'), 'Navbar logout handler is missing');
 assert(navbar.includes('LogOut'), 'Navbar logout icon is missing');
+=======
+assert(sidebar.includes('logout'), 'Sidebar logout button is missing');
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 assert(authContext.includes("localStorage.removeItem('token')"), 'Logout must clear token');
 assert(authContext.includes("navigate('/login')"), 'Logout must navigate to login');
 assert(reportsPage.includes('window.print()'), 'Reports printable view is missing');
 assert(reportsPage.includes('Export CSV'), 'Reports CSV export is missing');
 assert(reportsPage.includes('startDate'), 'Reports date filter is missing');
+<<<<<<< HEAD
 assert(reportsPage.includes('category'), 'Reports category filter is missing');
 assert(reportsPage.includes('Overdue Borrow Report'), 'Overdue borrow report is missing');
 assert(reportsPage.includes('Low Stock Report'), 'Low stock report is missing');
@@ -142,5 +177,12 @@ assert(laboratoriesPage.includes('api.delete(`/laboratories/${deleteTarget._id}`
 assert(laboratoriesPage.includes('openView(lab)'), 'Laboratories view action is missing');
 assert(laboratoriesPage.includes('border-gray-300'), 'Laboratory cards must use stronger light-mode borders');
 assert(laboratoriesPage.includes('dark:border-gray-700'), 'Laboratory cards must use stronger dark-mode borders');
+=======
+assert(borrowingPage.includes("openAction(record, 'approve')"), 'Borrow approve confirmation is missing');
+assert(borrowingPage.includes("openAction(record, 'reject')"), 'Borrow reject confirmation is missing');
+assert(borrowingPage.includes('conditionOnReturn'), 'Borrow return condition flow is missing');
+assert(maintenancePage.includes("openAction(record, 'status', 'Completed')"), 'Maintenance completion confirmation is missing');
+assert(maintenancePage.includes("openAction(record, 'delete')"), 'Maintenance delete confirmation is missing');
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 
 console.log('Frontend route QA passed');

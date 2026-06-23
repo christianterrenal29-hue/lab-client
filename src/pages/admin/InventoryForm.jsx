@@ -28,6 +28,7 @@ const initialFormData = {
   model: '',
   serialNumber: '',
   status: 'Available',
+<<<<<<< HEAD
   quantity: 1,
   minimumStock: 1,
   condition: 'Good',
@@ -38,6 +39,11 @@ const initialFormData = {
   shelf: '',
   imageUrl: '',
   nextMaintenanceDate: '',
+=======
+  condition: 'Good',
+  laboratory: '',
+  location: '',
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   purchaseDate: '',
   purchasePrice: '',
   warrantyExpiry: '',
@@ -67,6 +73,7 @@ export default function InventoryForm({ item, onSuccess, onCancel }) {
         model: item.model || '',
         serialNumber: item.serialNumber || '',
         status: item.status || 'Available',
+<<<<<<< HEAD
         quantity: item.quantity ?? 1,
         minimumStock: item.minimumStock ?? 1,
         condition: item.condition || 'Good',
@@ -77,6 +84,11 @@ export default function InventoryForm({ item, onSuccess, onCancel }) {
         shelf: item.shelf || '',
         imageUrl: item.imageUrl || '',
         nextMaintenanceDate: item.nextMaintenanceDate ? item.nextMaintenanceDate.split('T')[0] : '',
+=======
+        condition: item.condition || 'Good',
+        laboratory: item.laboratory?._id || item.laboratory || '',
+        location: item.location || '',
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         purchaseDate: item.purchaseDate ? item.purchaseDate.split('T')[0] : '',
         purchasePrice: item.purchasePrice || '',
         warrantyExpiry: item.warrantyExpiry ? item.warrantyExpiry.split('T')[0] : '',
@@ -121,11 +133,14 @@ export default function InventoryForm({ item, onSuccess, onCancel }) {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.category) newErrors.category = 'Category is required';
+<<<<<<< HEAD
     if (Number(formData.quantity) < 0) newErrors.quantity = 'Quantity cannot be negative';
     if (Number(formData.minimumStock) < 0) newErrors.minimumStock = 'Minimum stock cannot be negative';
     if (formData.purchasePrice && Number(formData.purchasePrice) < 0) {
       newErrors.purchasePrice = 'Purchase price cannot be negative';
     }
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -138,8 +153,11 @@ export default function InventoryForm({ item, onSuccess, onCancel }) {
       setLoading(true);
       const payload = {
         ...formData,
+<<<<<<< HEAD
         quantity: Number(formData.quantity || 0),
         minimumStock: Number(formData.minimumStock || 0),
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         purchasePrice: formData.purchasePrice ? Number(formData.purchasePrice) : undefined,
         laboratory: formData.laboratory || undefined,
       };
@@ -245,6 +263,7 @@ export default function InventoryForm({ item, onSuccess, onCancel }) {
         </Select>
       </div>
 
+<<<<<<< HEAD
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Input
           label="Quantity"
@@ -313,6 +332,15 @@ export default function InventoryForm({ item, onSuccess, onCancel }) {
           onChange={handleChange}
         />
       </div>
+=======
+      <Input
+        label="Location"
+        name="location"
+        value={formData.location}
+        onChange={handleChange}
+        placeholder="e.g., Room 101, Rack A"
+      />
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Input
@@ -328,7 +356,10 @@ export default function InventoryForm({ item, onSuccess, onCancel }) {
           type="number"
           value={formData.purchasePrice}
           onChange={handleChange}
+<<<<<<< HEAD
           error={errors.purchasePrice}
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           placeholder="0.00"
         />
         <Input
@@ -342,7 +373,11 @@ export default function InventoryForm({ item, onSuccess, onCancel }) {
 
       {/* Specifications (for computers) */}
       {formData.category === 'Computer' && (
+<<<<<<< HEAD
         <div className="border border-gray-300 dark:border-gray-700 rounded-lg p-4 shadow-sm">
+=======
+        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
             Specifications
           </h4>

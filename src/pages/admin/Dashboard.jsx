@@ -8,7 +8,10 @@ import {
   AlertTriangle,
   Clock,
   CheckCircle,
+<<<<<<< HEAD
   Bell,
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 } from 'lucide-react';
 import {
   BarChart,
@@ -96,6 +99,7 @@ export default function AdminDashboard() {
           color="primary"
         />
         <StatCard
+<<<<<<< HEAD
           title="Available Items"
           value={stats?.availableItems || 0}
           icon={CheckCircle}
@@ -106,6 +110,18 @@ export default function AdminDashboard() {
           value={stats?.borrowedItems || 0}
           icon={ClipboardList}
           color="blue"
+=======
+          title="Total Users"
+          value={stats?.totalUsers || 0}
+          icon={Users}
+          color="blue"
+        />
+        <StatCard
+          title="Laboratories"
+          value={stats?.totalLaboratories || 0}
+          icon={Building2}
+          color="green"
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         />
         <StatCard
           title="Pending Requests"
@@ -118,6 +134,7 @@ export default function AdminDashboard() {
       {/* Secondary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <StatCard
+<<<<<<< HEAD
           title="Low Stock Items"
           value={stats?.lowStockItems || 0}
           icon={AlertTriangle}
@@ -125,11 +142,21 @@ export default function AdminDashboard() {
         />
         <StatCard
           title="Overdue Returns"
+=======
+          title="Active Maintenance"
+          value={stats?.activeMaintenance || 0}
+          icon={Wrench}
+          color="purple"
+        />
+        <StatCard
+          title="Overdue Items"
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           value={stats?.overdueItems || 0}
           icon={AlertTriangle}
           color="red"
         />
         <StatCard
+<<<<<<< HEAD
           title="Maintenance Due"
           value={stats?.maintenanceDue || 0}
           icon={Wrench}
@@ -160,6 +187,15 @@ export default function AdminDashboard() {
         </Card.Body>
       </Card>
 
+=======
+          title="Total Borrow Records"
+          value={stats?.totalBorrowRecords || 0}
+          icon={ClipboardList}
+          color="blue"
+        />
+      </div>
+
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       {/* Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Inventory by Category */}
@@ -243,6 +279,7 @@ export default function AdminDashboard() {
         </Card>
       </div>
 
+<<<<<<< HEAD
       <div className="grid gap-6 lg:grid-cols-3">
         <DashboardList title="Low Stock List" items={stats?.lowStockList} render={(item) => (
           <>
@@ -264,6 +301,8 @@ export default function AdminDashboard() {
         )} />
       </div>
 
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       {/* Recent Activities */}
       <Card>
         <Card.Header>
@@ -309,6 +348,7 @@ export default function AdminDashboard() {
     </div>
   );
 }
+<<<<<<< HEAD
 
 function DashboardList({ title, items = [], render }) {
   return (
@@ -332,3 +372,5 @@ function DashboardList({ title, items = [], render }) {
     </Card>
   );
 }
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9

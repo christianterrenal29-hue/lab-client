@@ -8,7 +8,11 @@ import Modal from '../../components/ui/Modal';
 import Select from '../../components/ui/Select';
 import Spinner from '../../components/ui/Spinner';
 import toast from 'react-hot-toast';
+<<<<<<< HEAD
 import { formatDate, formatDateTime } from '../../utils/helpers';
+=======
+import { formatDate } from '../../utils/helpers';
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 
 const CONDITIONS = ['New', 'Good', 'Fair', 'Poor'];
 
@@ -18,8 +22,11 @@ export default function BorrowingPage({ mode = 'manage' }) {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [actionState, setActionState] = useState(null);
+<<<<<<< HEAD
   const [statusFilter, setStatusFilter] = useState('');
   const [slipRecord, setSlipRecord] = useState(null);
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   const [actionForm, setActionForm] = useState({
     reason: '',
     conditionOnReturn: 'Good',
@@ -27,7 +34,10 @@ export default function BorrowingPage({ mode = 'manage' }) {
   });
   const [formData, setFormData] = useState({
     item: '',
+<<<<<<< HEAD
     quantityBorrowed: 1,
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     purpose: '',
     expectedReturnDate: '',
   });
@@ -36,9 +46,13 @@ export default function BorrowingPage({ mode = 'manage' }) {
   const canRequest = mode === 'request';
 
   const fetchRecords = async () => {
+<<<<<<< HEAD
     const params = new URLSearchParams({ limit: '100' });
     if (statusFilter) params.set('status', statusFilter);
     const response = await api.get(`/borrow?${params}`);
+=======
+    const response = await api.get('/borrow?limit=100');
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     setRecords(response.data.records || []);
   };
 
@@ -60,18 +74,28 @@ export default function BorrowingPage({ mode = 'manage' }) {
     };
 
     load();
+<<<<<<< HEAD
   }, [canRequest, statusFilter]);
+=======
+  }, [canRequest]);
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 
   const handleRequest = async (event) => {
     event.preventDefault();
     try {
       setSubmitting(true);
+<<<<<<< HEAD
       await api.post('/borrow', {
         ...formData,
         quantityBorrowed: Number(formData.quantityBorrowed || 1),
       });
       toast.success('Borrow request submitted');
       setFormData({ item: '', quantityBorrowed: 1, purpose: '', expectedReturnDate: '' });
+=======
+      await api.post('/borrow', formData);
+      toast.success('Borrow request submitted');
+      setFormData({ item: '', purpose: '', expectedReturnDate: '' });
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       await fetchRecords();
     } catch (error) {
       toast.error(error.response?.data?.message || 'Failed to submit request');
@@ -111,12 +135,18 @@ export default function BorrowingPage({ mode = 'manage' }) {
 
     try {
       setSubmitting(true);
+<<<<<<< HEAD
       const response = await api.post(`/borrow/${record._id}/${action}`, payload);
       const labels = { approve: 'approved', reject: 'rejected', return: 'returned' };
       toast.success(`Request ${labels[action]}`);
       if (action === 'approve') {
         setSlipRecord(response.data);
       }
+=======
+      await api.post(`/borrow/${record._id}/${action}`, payload);
+      const labels = { approve: 'approved', reject: 'rejected', return: 'returned' };
+      toast.success(`Request ${labels[action]}`);
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       closeAction();
       await fetchRecords();
     } catch (error) {
@@ -132,11 +162,14 @@ export default function BorrowingPage({ mode = 'manage' }) {
     return: 'Return Borrowed Item',
   }[actionState?.action];
 
+<<<<<<< HEAD
   const isOverdue = (record) =>
     ['Borrowed', 'Overdue'].includes(record.status) &&
     !record.actualReturnDate &&
     new Date(record.expectedReturnDate) < new Date();
 
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   return (
     <div className="space-y-6">
       <div>
@@ -154,7 +187,11 @@ export default function BorrowingPage({ mode = 'manage' }) {
             <h2 className="font-semibold text-gray-900 dark:text-white">New Borrow Request</h2>
           </Card.Header>
           <Card.Body>
+<<<<<<< HEAD
             <form onSubmit={handleRequest} className="grid gap-4 md:grid-cols-4">
+=======
+            <form onSubmit={handleRequest} className="grid gap-4 md:grid-cols-3">
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
               <Select
                 label="Item"
                 value={formData.item}
@@ -169,6 +206,7 @@ export default function BorrowingPage({ mode = 'manage' }) {
                 ))}
               </Select>
               <Input
+<<<<<<< HEAD
                 label="Quantity"
                 type="number"
                 min="1"
@@ -177,6 +215,8 @@ export default function BorrowingPage({ mode = 'manage' }) {
                 required
               />
               <Input
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                 label="Purpose"
                 value={formData.purpose}
                 onChange={(event) => setFormData((prev) => ({ ...prev, purpose: event.target.value }))}
@@ -191,7 +231,11 @@ export default function BorrowingPage({ mode = 'manage' }) {
                 }
                 required
               />
+<<<<<<< HEAD
               <div className="md:col-span-4">
+=======
+              <div className="md:col-span-3">
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                 <Button type="submit" loading={submitting}>
                   Submit Request
                 </Button>
@@ -203,6 +247,7 @@ export default function BorrowingPage({ mode = 'manage' }) {
 
       <Card>
         <Card.Body>
+<<<<<<< HEAD
           <div className="mb-4 flex flex-wrap items-end gap-3">
             <Select
               label="Status Filter"
@@ -217,6 +262,8 @@ export default function BorrowingPage({ mode = 'manage' }) {
               <option value="Overdue">Overdue</option>
             </Select>
           </div>
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           {loading ? (
             <div className="flex h-40 items-center justify-center">
               <Spinner />
@@ -229,7 +276,10 @@ export default function BorrowingPage({ mode = 'manage' }) {
                     <th className="px-3 py-2">Borrow ID</th>
                     <th className="px-3 py-2">Borrower</th>
                     <th className="px-3 py-2">Item</th>
+<<<<<<< HEAD
                     <th className="px-3 py-2">Qty</th>
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                     <th className="px-3 py-2">Expected Return</th>
                     <th className="px-3 py-2">Status</th>
                     {canManage && <th className="px-3 py-2">Actions</th>}
@@ -243,11 +293,17 @@ export default function BorrowingPage({ mode = 'manage' }) {
                         {record.borrower?.firstName} {record.borrower?.lastName}
                       </td>
                       <td className="px-3 py-3">{record.item?.name || '-'}</td>
+<<<<<<< HEAD
                       <td className="px-3 py-3">{record.quantityBorrowed || 1}</td>
                       <td className="px-3 py-3">{formatDate(record.expectedReturnDate)}</td>
                       <td className="px-3 py-3">
                         <Badge variant={record.status}>{record.status}</Badge>
                         {isOverdue(record) && <span className="ml-2"><Badge variant="Overdue">OVERDUE</Badge></span>}
+=======
+                      <td className="px-3 py-3">{formatDate(record.expectedReturnDate)}</td>
+                      <td className="px-3 py-3">
+                        <Badge variant={record.status}>{record.status}</Badge>
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                       </td>
                       {canManage && (
                         <td className="px-3 py-3">
@@ -263,6 +319,7 @@ export default function BorrowingPage({ mode = 'manage' }) {
                               </>
                             )}
                             {['Borrowed', 'Overdue'].includes(record.status) && (
+<<<<<<< HEAD
                               <>
                                 <Button size="sm" variant="outline" onClick={() => setSlipRecord(record)}>
                                   Print Slip
@@ -271,6 +328,11 @@ export default function BorrowingPage({ mode = 'manage' }) {
                                   Return
                                 </Button>
                               </>
+=======
+                              <Button size="sm" variant="secondary" onClick={() => openAction(record, 'return')}>
+                                Return
+                              </Button>
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                             )}
                           </div>
                         </td>
@@ -342,6 +404,7 @@ export default function BorrowingPage({ mode = 'manage' }) {
           </Modal.Footer>
         </div>
       </Modal>
+<<<<<<< HEAD
 
       <Modal isOpen={!!slipRecord} onClose={() => setSlipRecord(null)} title="Borrowing Slip">
         <div className="space-y-4" id="borrow-slip">
@@ -378,6 +441,8 @@ function SlipItem({ label, value }) {
     <div>
       <p className="text-xs uppercase text-gray-500 dark:text-gray-400">{label}</p>
       <p className="font-medium text-gray-900 dark:text-white">{value || '-'}</p>
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     </div>
   );
 }

@@ -1,14 +1,22 @@
+<<<<<<< HEAD
 import { useState } from 'react';
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 import { Outlet, Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import Sidebar from '../components/layout/Sidebar';
 import Navbar from '../components/layout/Navbar';
 import { PageLoader } from '../components/ui/Spinner';
+<<<<<<< HEAD
 import { cn } from '../utils/helpers';
 
 export default function DashboardLayout({ allowedRoles }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+=======
+
+export default function DashboardLayout({ allowedRoles }) {
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   const { user, loading, isAuthenticated } = useAuth();
 
   if (loading) {
@@ -31,6 +39,7 @@ export default function DashboardLayout({ allowedRoles }) {
   }
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen bg-school-light dark:bg-gray-950">
       <Sidebar
         collapsed={sidebarCollapsed}
@@ -46,6 +55,13 @@ export default function DashboardLayout({ allowedRoles }) {
       >
         <Navbar onMenuClick={() => setMobileSidebarOpen(true)} />
         <main className="p-4 sm:p-6">
+=======
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+      <Sidebar />
+      <div className="pl-64">
+        <Navbar />
+        <main className="p-6">
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           <Outlet />
         </main>
       </div>

@@ -6,12 +6,18 @@ import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import Spinner from '../../components/ui/Spinner';
 import InventoryDetails from './InventoryDetails';
+<<<<<<< HEAD
 import { useAuth } from '../../context/AuthContext';
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 
 export default function InventoryDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
+<<<<<<< HEAD
   const { user } = useAuth();
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -50,11 +56,17 @@ export default function InventoryDetailPage() {
           </div>
           <p className="text-gray-500 dark:text-gray-400">{item.itemId || item.category}</p>
         </div>
+<<<<<<< HEAD
         {user?.role === 'admin' && (
           <Button onClick={() => navigate(`/admin/inventory/${id}/edit`)}>
             Edit Item
           </Button>
         )}
+=======
+        <Button onClick={() => navigate(`/admin/inventory/${id}/edit`)}>
+          Edit Item
+        </Button>
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       </div>
       <Card>
         <Card.Body>

@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { Plus, Edit2, Trash2, Eye, Filter, Image as ImageIcon } from 'lucide-react';
+=======
+import { Plus, Edit2, Trash2, Eye, QrCode, Filter } from 'lucide-react';
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 import api from '../../services/api';
 import DataTable from '../../components/tables/DataTable';
 import Button from '../../components/ui/Button';
@@ -23,11 +27,15 @@ const CATEGORIES = [
   'Other',
 ];
 
+<<<<<<< HEAD
 const STATUSES = ['Available', 'Borrowed', 'Under Maintenance', 'Damaged', 'Missing', 'Low Stock'];
 
 function locationText(item) {
   return [item.room, item.cabinet, item.shelf].filter(Boolean).join(' / ') || item.location || '-';
 }
+=======
+const STATUSES = ['Available', 'Borrowed', 'Under Maintenance', 'Damaged', 'Missing'];
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 
 export default function InventoryPage() {
   const [items, setItems] = useState([]);
@@ -135,6 +143,7 @@ export default function InventoryPage() {
       ),
     },
     {
+<<<<<<< HEAD
       key: 'imageUrl',
       header: 'Photo',
       render: (value, row) => (
@@ -150,14 +159,20 @@ export default function InventoryPage() {
       ),
     },
     {
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       key: 'name',
       header: 'Name',
       render: (value, row) => (
         <div>
+<<<<<<< HEAD
           <div className="flex flex-wrap items-center gap-2">
             <p className="font-medium">{value}</p>
             {row.quantity <= row.minimumStock && <Badge variant="Low Stock">LOW STOCK</Badge>}
           </div>
+=======
+          <p className="font-medium">{value}</p>
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           <p className="text-xs text-gray-500 dark:text-gray-400">
             {row.brand} {row.model}
           </p>
@@ -176,21 +191,27 @@ export default function InventoryPage() {
       render: (value) => <Badge variant={value}>{value}</Badge>,
     },
     {
+<<<<<<< HEAD
       key: 'quantity',
       header: 'Qty',
       render: (value, row) => `${value ?? 0} / min ${row.minimumStock ?? 0}`,
     },
     {
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       key: 'laboratory',
       header: 'Laboratory',
       render: (value) => value?.name || '-',
     },
     {
+<<<<<<< HEAD
       key: 'location',
       header: 'Location',
       render: (_, row) => locationText(row),
     },
     {
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       key: 'actions',
       header: 'Actions',
       sortable: false,

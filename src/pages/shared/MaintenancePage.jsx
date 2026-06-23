@@ -16,13 +16,17 @@ export default function MaintenancePage() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [actionState, setActionState] = useState(null);
+<<<<<<< HEAD
   const [dueFilter, setDueFilter] = useState('');
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   const [formData, setFormData] = useState({
     item: '',
     type: 'Corrective',
     priority: 'Medium',
     description: '',
     technician: '',
+<<<<<<< HEAD
     nextMaintenanceDate: '',
   });
 
@@ -30,6 +34,12 @@ export default function MaintenancePage() {
     const params = new URLSearchParams({ limit: '100' });
     if (dueFilter) params.set('due', dueFilter);
     const response = await api.get(`/maintenance?${params}`);
+=======
+  });
+
+  const fetchRecords = async () => {
+    const response = await api.get('/maintenance?limit=100');
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     setRecords(response.data.records || []);
   };
 
@@ -46,7 +56,11 @@ export default function MaintenancePage() {
     };
 
     load();
+<<<<<<< HEAD
   }, [dueFilter]);
+=======
+  }, []);
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 
   const handleCreate = async (event) => {
     event.preventDefault();
@@ -60,7 +74,10 @@ export default function MaintenancePage() {
         priority: 'Medium',
         description: '',
         technician: '',
+<<<<<<< HEAD
         nextMaintenanceDate: '',
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       });
       await fetchRecords();
     } catch (error) {
@@ -160,12 +177,15 @@ export default function MaintenancePage() {
               onChange={(event) => setFormData((prev) => ({ ...prev, technician: event.target.value }))}
             />
             <Input
+<<<<<<< HEAD
               label="Next Maintenance"
               type="date"
               value={formData.nextMaintenanceDate}
               onChange={(event) => setFormData((prev) => ({ ...prev, nextMaintenanceDate: event.target.value }))}
             />
             <Input
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
               label="Description"
               value={formData.description}
               onChange={(event) => setFormData((prev) => ({ ...prev, description: event.target.value }))}
@@ -182,6 +202,7 @@ export default function MaintenancePage() {
 
       <Card>
         <Card.Body>
+<<<<<<< HEAD
           <div className="mb-4 flex flex-wrap items-end gap-3">
             <Select
               label="Maintenance Due Filter"
@@ -193,6 +214,8 @@ export default function MaintenancePage() {
               <option value="overdue">Overdue</option>
             </Select>
           </div>
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           {loading ? (
             <div className="flex h-40 items-center justify-center">
               <Spinner />
@@ -207,7 +230,10 @@ export default function MaintenancePage() {
                     <th className="px-3 py-2">Type</th>
                     <th className="px-3 py-2">Priority</th>
                     <th className="px-3 py-2">Status</th>
+<<<<<<< HEAD
                     <th className="px-3 py-2">Next Maintenance</th>
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                     <th className="px-3 py-2">Completed</th>
                     <th className="px-3 py-2">Actions</th>
                   </tr>
@@ -223,9 +249,13 @@ export default function MaintenancePage() {
                       </td>
                       <td className="px-3 py-3">
                         <Badge variant={record.status}>{record.status}</Badge>
+<<<<<<< HEAD
                         <MaintenanceDueBadge date={record.nextMaintenanceDate} status={record.status} />
                       </td>
                       <td className="px-3 py-3">{formatDate(record.nextMaintenanceDate) || '-'}</td>
+=======
+                      </td>
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                       <td className="px-3 py-3">{formatDate(record.completionDate) || '-'}</td>
                       <td className="px-3 py-3">
                         <div className="flex flex-wrap gap-2">
@@ -293,6 +323,7 @@ export default function MaintenancePage() {
     </div>
   );
 }
+<<<<<<< HEAD
 
 function MaintenanceDueBadge({ date, status }) {
   if (!date || status === 'Completed') return null;
@@ -311,3 +342,5 @@ function MaintenanceDueBadge({ date, status }) {
 
   return null;
 }
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9

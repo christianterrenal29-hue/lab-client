@@ -12,7 +12,10 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
   background: #F8FAF3;
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 }
 
 /* Custom scrollbar */
@@ -30,12 +33,20 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
+<<<<<<< HEAD
   background: #5F7F2B;
+=======
+  background: #c1c1c1;
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+<<<<<<< HEAD
   background: #1F3F2A;
+=======
+  background: #a8a8a8;
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 }
 
 .dark ::-webkit-scrollbar-thumb {

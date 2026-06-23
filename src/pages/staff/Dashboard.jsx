@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { Package, ClipboardList, Wrench, Clock, AlertTriangle } from 'lucide-react';
+=======
+import { Package, ClipboardList, Wrench, Clock } from 'lucide-react';
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 import api from '../../services/api';
 import StatCard from '../../components/charts/StatCard';
 import Card from '../../components/ui/Card';
@@ -51,6 +55,7 @@ export default function StaffDashboard() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard
+<<<<<<< HEAD
           title="Available Items"
           value={stats?.availableItems || 0}
           icon={Package}
@@ -61,6 +66,12 @@ export default function StaffDashboard() {
           value={stats?.lowStockItems || 0}
           icon={AlertTriangle}
           color="red"
+=======
+          title="Total Inventory"
+          value={stats?.totalInventory || 0}
+          icon={Package}
+          color="primary"
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         />
         <StatCard
           title="Pending Requests"
@@ -75,6 +86,7 @@ export default function StaffDashboard() {
           color="purple"
         />
         <StatCard
+<<<<<<< HEAD
           title="Maintenance Due"
           value={stats?.maintenanceDue || 0}
           icon={Wrench}
@@ -102,6 +114,15 @@ export default function StaffDashboard() {
         </Card.Body>
       </Card>
 
+=======
+          title="Total Borrow Records"
+          value={stats?.totalBorrowRecords || 0}
+          icon={ClipboardList}
+          color="blue"
+        />
+      </div>
+
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       {/* Recent Activities */}
       <Card>
         <Card.Header>

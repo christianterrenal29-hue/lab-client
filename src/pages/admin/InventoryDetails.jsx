@@ -1,17 +1,24 @@
 import { QRCodeSVG } from 'qrcode.react';
 import Badge from '../../components/ui/Badge';
+<<<<<<< HEAD
 import Button from '../../components/ui/Button';
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 import { formatDate } from '../../utils/helpers';
 
 export default function InventoryDetails({ item }) {
   if (!item) return null;
+<<<<<<< HEAD
   const itemUrl = item.itemUrl || `${window.location.origin}/inventory/${item._id}`;
   const location = [item.room, item.cabinet, item.shelf].filter(Boolean).join(' / ') || item.location || '-';
   const isLowStock = Number(item.quantity || 0) <= Number(item.minimumStock || 0);
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 
   return (
     <div className="space-y-6">
       {/* Header with QR Code */}
+<<<<<<< HEAD
       <div className="flex flex-col gap-6 md:flex-row md:items-start">
         <div className="h-36 w-36 overflow-hidden rounded-lg border border-gray-300 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
           {item.imageUrl ? (
@@ -26,13 +33,27 @@ export default function InventoryDetails({ item }) {
           <div className="p-2 bg-white rounded-lg border border-gray-300">
             <QRCodeSVG
               value={itemUrl}
+=======
+      <div className="flex items-start gap-6">
+        <div className="flex-shrink-0">
+          <div className="p-2 bg-white rounded-lg border border-gray-200">
+            <QRCodeSVG
+              value={JSON.stringify({
+                itemId: item.itemId,
+                name: item.name,
+                serialNumber: item.serialNumber,
+              })}
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
               size={120}
             />
           </div>
           <p className="text-xs text-center text-gray-500 mt-2">{item.itemId}</p>
+<<<<<<< HEAD
           <Button type="button" size="sm" variant="secondary" className="mt-2 w-full print:hidden" onClick={() => window.print()}>
             Print QR
           </Button>
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         </div>
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -44,7 +65,10 @@ export default function InventoryDetails({ item }) {
           <div className="flex items-center gap-2 mt-2">
             <Badge variant={item.status}>{item.status}</Badge>
             <Badge variant={item.condition}>{item.condition}</Badge>
+<<<<<<< HEAD
             {isLowStock && <Badge variant="Low Stock">LOW STOCK</Badge>}
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           </div>
         </div>
       </div>
@@ -53,6 +77,7 @@ export default function InventoryDetails({ item }) {
       <div className="grid grid-cols-2 gap-4">
         <DetailItem label="Category" value={item.category} />
         <DetailItem label="Serial Number" value={item.serialNumber || '-'} />
+<<<<<<< HEAD
         <DetailItem label="Quantity" value={`${item.quantity ?? 0} / minimum ${item.minimumStock ?? 0}`} />
         <DetailItem label="Laboratory" value={item.laboratory?.name || '-'} />
         <DetailItem label="Room" value={item.room || '-'} />
@@ -60,6 +85,10 @@ export default function InventoryDetails({ item }) {
         <DetailItem label="Shelf" value={item.shelf || '-'} />
         <DetailItem label="Location" value={location} />
         <DetailItem label="Next Maintenance" value={formatDate(item.nextMaintenanceDate) || '-'} />
+=======
+        <DetailItem label="Laboratory" value={item.laboratory?.name || '-'} />
+        <DetailItem label="Location" value={item.location || '-'} />
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         <DetailItem label="Purchase Date" value={formatDate(item.purchaseDate) || '-'} />
         <DetailItem
           label="Purchase Price"
@@ -115,7 +144,11 @@ export default function InventoryDetails({ item }) {
       )}
 
       {/* Timestamps */}
+<<<<<<< HEAD
       <div className="text-xs text-gray-500 dark:text-gray-400 pt-4 border-t border-gray-300 dark:border-gray-700">
+=======
+      <div className="text-xs text-gray-500 dark:text-gray-400 pt-4 border-t border-gray-200 dark:border-gray-700">
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         <p>Created: {formatDate(item.createdAt)}</p>
         <p>Last Updated: {formatDate(item.updatedAt)}</p>
       </div>

@@ -6,6 +6,7 @@ export default {
     extend: {
       colors: {
         primary: {
+<<<<<<< HEAD
           50: '#F8FAF3',
           100: '#EEF3E3',
           200: '#DCE8C5',
@@ -23,6 +24,18 @@ export default {
           gold: '#F2C94C',
           teal: '#2F6F73',
           light: '#F8FAF3',
+=======
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         },
       },
       fontFamily: {

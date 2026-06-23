@@ -31,6 +31,7 @@ export function formatDateTime(date) {
 export function getStatusColor(status) {
   const colors = {
     // Inventory status
+<<<<<<< HEAD
     Available: 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200',
     Borrowed: 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300',
     'Under Maintenance': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
@@ -53,6 +54,28 @@ export function getStatusColor(status) {
 
     // Laboratory status
     Active: 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200',
+=======
+    Available: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
+    Borrowed: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
+    'Under Maintenance': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
+    Damaged: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
+    Missing: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300',
+
+    // Borrow status
+    Pending: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
+    Approved: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
+    Rejected: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
+    Returned: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300',
+    Overdue: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
+
+    // Maintenance status
+    'In Progress': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
+    Completed: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
+    Cancelled: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300',
+
+    // Laboratory status
+    Active: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     Inactive: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300',
 
     // Priority
@@ -62,8 +85,13 @@ export function getStatusColor(status) {
     Critical: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
 
     // Condition
+<<<<<<< HEAD
     New: 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200',
     Good: 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300',
+=======
+    New: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
+    Good: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     Fair: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
     Poor: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
   };

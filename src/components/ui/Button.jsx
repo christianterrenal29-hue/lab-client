@@ -1,12 +1,21 @@
 import { cn } from '../../utils/helpers';
 
 const variants = {
+<<<<<<< HEAD
   primary: 'bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500',
   secondary: 'bg-school-gold text-school-dark hover:bg-yellow-300 focus:ring-school-gold',
   danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
   success: 'bg-school-teal text-white hover:bg-teal-800 focus:ring-school-teal',
   outline: 'border border-primary-500 text-primary-700 hover:bg-primary-50 focus:ring-primary-500 dark:border-primary-300 dark:text-primary-100 dark:hover:bg-primary-900',
   ghost: 'text-primary-800 hover:bg-primary-50 focus:ring-primary-500 dark:text-primary-100 dark:hover:bg-primary-900',
+=======
+  primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500',
+  secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600',
+  danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
+  success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500',
+  outline: 'border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-primary-500 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800',
+  ghost: 'text-gray-700 hover:bg-gray-100 focus:ring-gray-500 dark:text-gray-200 dark:hover:bg-gray-800',
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 };
 
 const sizes = {

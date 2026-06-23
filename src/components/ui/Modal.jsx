@@ -60,7 +60,11 @@ export default function Modal({
         >
           {/* Header */}
           {(title || showCloseButton) && (
+<<<<<<< HEAD
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-300 dark:border-gray-700">
+=======
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
               {title && (
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                   {title}
@@ -89,7 +93,11 @@ Modal.Footer = function ModalFooter({ children, className }) {
   return (
     <div
       className={cn(
+<<<<<<< HEAD
         'flex items-center justify-end gap-3 pt-4 border-t border-gray-300 dark:border-gray-700 -mx-6 -mb-6 px-6 py-4 bg-gray-50 dark:bg-gray-800/50 rounded-b-xl',
+=======
+        'flex items-center justify-end gap-3 pt-4 border-t border-gray-200 dark:border-gray-700 -mx-6 -mb-6 px-6 py-4 bg-gray-50 dark:bg-gray-800/50 rounded-b-xl',
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         className
       )}
     >

@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { ArrowLeft, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../../components/ui/Button';
+=======
+import { GraduationCap, Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
+import Button from '../../components/ui/Button';
+import Input from '../../components/ui/Input';
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
 import Card from '../../components/ui/Card';
 
 export default function LoginPage() {
@@ -40,6 +47,7 @@ export default function LoginPage() {
 
   return (
     <div className="w-full max-w-md">
+<<<<<<< HEAD
       <Card className="overflow-hidden border-white/70 bg-white/90 shadow-2xl backdrop-blur-md dark:border-gray-600/80 dark:bg-gray-800/90">
         <div className="px-6 pt-5">
           <Link
@@ -64,6 +72,20 @@ export default function LoginPage() {
           </p>
           <p className="text-gray-600 dark:text-gray-300 text-sm">
             Laboratory Inventory and Tracking System
+=======
+      <Card className="overflow-hidden">
+        {/* Header */}
+        <div className="bg-primary-600 px-6 py-8 text-center">
+          <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+            <GraduationCap className="w-8 h-8 text-white" />
+          </div>
+          <h1 className="text-2xl font-bold text-white">Welcome Back</h1>
+          <p className="text-primary-100 mt-1">
+            Top Link Global College
+          </p>
+          <p className="text-primary-200 text-sm">
+            Laboratory Inventory System
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
           </p>
         </div>
 
@@ -84,8 +106,13 @@ export default function LoginPage() {
                   className={`w-full pl-10 pr-4 py-2.5 rounded-lg border ${
                     errors.email
                       ? 'border-red-500 focus:ring-red-500'
+<<<<<<< HEAD
                       : 'border-primary-200 dark:border-gray-600 focus:ring-primary-500'
                   } bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:border-transparent`}
+=======
+                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary-500'
+                  } bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:border-transparent`}
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                 />
               </div>
               {errors.email && (
@@ -107,8 +134,13 @@ export default function LoginPage() {
                   className={`w-full pl-10 pr-12 py-2.5 rounded-lg border ${
                     errors.password
                       ? 'border-red-500 focus:ring-red-500'
+<<<<<<< HEAD
                       : 'border-primary-200 dark:border-gray-600 focus:ring-primary-500'
                   } bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:border-transparent`}
+=======
+                      : 'border-gray-300 dark:border-gray-600 focus:ring-primary-500'
+                  } bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:border-transparent`}
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                 />
                 <button
                   type="button"
@@ -135,7 +167,11 @@ export default function LoginPage() {
           <div className="mt-4 text-center">
             <Link
               to="/forgot-password"
+<<<<<<< HEAD
               className="text-sm font-medium text-primary-700 hover:text-school-dark"
+=======
+              className="text-sm font-medium text-primary-600 hover:text-primary-700"
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
             >
               Forgot password?
             </Link>
@@ -146,7 +182,11 @@ export default function LoginPage() {
               {"Don't have an account? "}
               <Link
                 to="/register"
+<<<<<<< HEAD
                 className="text-primary-700 hover:text-school-dark font-medium"
+=======
+                className="text-primary-600 hover:text-primary-700 font-medium"
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
               >
                 Register here
               </Link>
@@ -154,8 +194,13 @@ export default function LoginPage() {
           </div>
 
           {/* Demo credentials */}
+<<<<<<< HEAD
           {/* <div className="mt-6 p-4 bg-primary-50 dark:bg-gray-800/50 rounded-lg border border-primary-100 dark:border-gray-700">
             <p className="text-xs font-medium text-primary-800 dark:text-gray-300 mb-2">
+=======
+          <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+            <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2">
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
               Demo Credentials:
             </p>
             <div className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
@@ -163,7 +208,11 @@ export default function LoginPage() {
               <p>Staff: staff@toplink.edu / staff123</p>
               <p>Student: student@toplink.edu / student123</p>
             </div>
+<<<<<<< HEAD
           </div> */}
+=======
+          </div>
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
         </Card.Body>
       </Card>
     </div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useMemo, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Eye, Pencil, Plus, Trash2 } from 'lucide-react';
@@ -66,11 +67,29 @@ export default function LaboratoriesPage() {
         setUsers(usersResponse.data.users || []);
       } catch (error) {
         toast.error(error.response?.data?.message || 'Failed to load laboratories');
+=======
+import { useEffect, useState } from 'react';
+import api from '../../services/api';
+import Badge from '../../components/ui/Badge';
+import Card from '../../components/ui/Card';
+import Spinner from '../../components/ui/Spinner';
+
+export default function LaboratoriesPage() {
+  const [laboratories, setLaboratories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchLaboratories = async () => {
+      try {
+        const response = await api.get('/laboratories?limit=100');
+        setLaboratories(response.data.laboratories || []);
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       } finally {
         setLoading(false);
       }
     };
 
+<<<<<<< HEAD
     loadPageData();
   }, []);
 
@@ -170,12 +189,24 @@ export default function LaboratoriesPage() {
         </Button>
       </div>
 
+=======
+    fetchLaboratories();
+  }, []);
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Laboratories</h1>
+        <p className="text-gray-500 dark:text-gray-400">View laboratory rooms and status.</p>
+      </div>
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
       <Card>
         <Card.Body>
           {loading ? (
             <div className="flex h-40 items-center justify-center">
               <Spinner />
             </div>
+<<<<<<< HEAD
           ) : laboratories.length === 0 ? (
             <EmptyState
               title="No Laboratories Found"
@@ -201,10 +232,25 @@ export default function LaboratoriesPage() {
                       </h2>
                       <p className="text-sm text-gray-500 dark:text-gray-400">
                         {lab.building || 'Building'} - Room {lab.roomNumber}
+=======
+          ) : (
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {laboratories.map((lab) => (
+                <div
+                  key={lab._id}
+                  className="rounded-lg border border-gray-200 p-4 dark:border-gray-800"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h2 className="font-semibold text-gray-900 dark:text-white">{lab.name}</h2>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        {lab.building || 'Building'} · Room {lab.roomNumber}
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
                       </p>
                     </div>
                     <Badge variant={lab.status}>{lab.status}</Badge>
                   </div>
+<<<<<<< HEAD
 
                   <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
                     <div>
@@ -242,11 +288,18 @@ export default function LaboratoriesPage() {
                     </Button>
                   </div>
                 </article>
+=======
+                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                    Capacity: {lab.capacity || 0}
+                  </p>
+                </div>
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
               ))}
             </div>
           )}
         </Card.Body>
       </Card>
+<<<<<<< HEAD
 
       <Modal
         isOpen={isFormOpen}
@@ -396,6 +449,8 @@ export default function LaboratoriesPage() {
         confirmText="Delete"
         loading={deleting}
       />
+=======
+>>>>>>> 6f02213f17862507603ace70185a986836e978b9
     </div>
   );
 }
