@@ -1,0 +1,1 @@
+import{c as e,n as t,o as n}from"./helpers-B2Er-lGD.js";var r=e();function i({children:e,variant:i,className:a}){return(0,r.jsx)(`span`,{className:t(`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium`,i?n(i):`bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300`,a),children:e})}export{i as t};
